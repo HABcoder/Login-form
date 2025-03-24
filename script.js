@@ -61,3 +61,23 @@ validNumber.addEventListener("input", function() {
     lbnumber.textContent = "";
   }
 );
+
+
+// mOdal 
+document.getElementById("submit").addEventListener("click", function () {
+    let nameValue = validName.value.trim();
+    let emailValue = validEmail.value.trim();
+    let phoneValue = validNumber.value.trim();
+
+    let nameValid = nameRegex.test(nameValue);
+    let emailValid = emailRegex.test(emailValue);
+    let numberValid = numberRegex.test(phoneValue);
+
+    if (nameValid && emailValid && numberValid) {
+        document.getElementById("mduser").textContent = "Username: " + nameValue;
+        document.getElementById("mdemail").textContent = "Email: " + emailValue;
+        document.getElementById("mdnum").textContent = "Phone Number: " + phoneValue;
+    } else {
+        alert("Kindly fill this form");
+    }
+});
