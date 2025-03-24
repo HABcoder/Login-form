@@ -75,12 +75,14 @@ document.getElementById("submit").addEventListener("click", function (){
     let test2 = emailRegex.test(emailValue);
     let test3 = numberRegex.test(phoneValue);
 
-    if(test1 && test2 && test3){
-        document.getElementById("mduser").textContent += nameValue;
-        document.getElementById("mdemail").textContent += emailValue;
-        document.getElementById("mdnum").textContent += phoneValue;
-    }
-    else{
-        alert("Kindly fill this form");
+   if (test1 && test2 && test3) {
+        document.getElementById("message").textContent = " ";
+        document.getElementById("staticBackdropLabel").innerHTML = "Form Details";
+        document.getElementById("mduser").textContent = "Username: " + nameValue;
+        document.getElementById("mdemail").textContent = "Email: " + emailValue;
+        document.getElementById("mdnum").textContent = "Phone Number: " + phoneValue;
+    } else {
+        document.getElementById("message").textContent = "Kindly Fill your details";
+        document.getElementById("staticBackdropLabel").innerHTML = "🥺Ooops!";
     }
 })
