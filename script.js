@@ -63,21 +63,24 @@ validNumber.addEventListener("input", function() {
 );
 
 
-// mOdal 
-document.getElementById("submit").addEventListener("click", function () {
+// Modal
+document.getElementById("submit").addEventListener("click", function (){
+    // all inputes select 
     let nameValue = validName.value.trim();
     let emailValue = validEmail.value.trim();
     let phoneValue = validNumber.value.trim();
+     
+    // all regex test 
+    let test1 = nameRegex.test(nameValue);
+    let test2 = emailRegex.test(emailValue);
+    let test3 = numberRegex.test(phoneValue);
 
-    let nameValid = nameRegex.test(nameValue);
-    let emailValid = emailRegex.test(emailValue);
-    let numberValid = numberRegex.test(phoneValue);
-
-    if (nameValid && emailValid && numberValid) {
-        document.getElementById("mduser").textContent = "Username: " + nameValue;
-        document.getElementById("mdemail").textContent = "Email: " + emailValue;
-        document.getElementById("mdnum").textContent = "Phone Number: " + phoneValue;
-    } else {
+    if(test1 && test2 && test3){
+        document.getElementById("mduser").textContent += nameValue;
+        document.getElementById("mdemail").textContent += emailValue;
+        document.getElementById("mdnum").textContent += phoneValue;
+    }
+    else{
         alert("Kindly fill this form");
     }
-});
+})
