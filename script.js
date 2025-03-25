@@ -84,5 +84,8 @@ document.getElementById("submit").addEventListener("click", function (){
     } else {
         document.getElementById("message").textContent = "Kindly Fill your details";
         document.getElementById("staticBackdropLabel").innerHTML = "🥺Ooops!";
+        document.getElementById("mduser").textContent = " ";
+        document.getElementById("mdemail").textContent = " ";
+        document.getElementById("mdnum").textContent = " ";
     }
 })
